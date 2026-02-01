@@ -6,6 +6,7 @@
   <title>Alt Nivel Studio</title>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
   <div id="app"></div>
@@ -14,13 +15,20 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     async function loadContent() {
-      const res = await fetch('content.md');
-      const text = await res.text();
+      try {
+        const res = await fetch('content.md');
+        const text = await res.text();
 
-      // Parse frontmatter
-      const match = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-      const meta = jsyaml.load(match[1]);
-      const markdown = match[2];
+        // Parse frontmatter
+        const match = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+        if (!match) {
+          console.error('Could not parse frontmatter');
+          return;
+        }
+        const meta = jsyaml.load(match[1]);
+        const markdown = match[2];
+
+        console.log('Parsed meta:', meta);
 
       // Parse markdown sections
       const sections = {};
@@ -171,6 +179,10 @@
           </div>
         </footer>
       `;
+      } catch (err) {
+        console.error('Error loading content:', err);
+        document.getElementById('app').innerHTML = '<p>Error loading content. Check console.</p>';
+      }
     }
 
     loadContent();
