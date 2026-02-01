@@ -3,10 +3,39 @@ slug: faza-pe-delicatete
 title: Faza pe Delicatețe
 subtitle: Podcast video dedicat antreprenorilor locali din domeniul cosmeticelor și wellbeing
 
-price:
-  amount: 750
-  currency: EUR
-  note: "+ TVA"
+packages:
+  - name: Basic
+    price: 400
+    currency: EUR
+    highlight: false
+    deliverables:
+      - Interviu scurt de 20-30 minute
+      - 1 reel profesional pentru social media
+      - Setup de studio cu iluminare beauty
+      - Fișierele video pentru canalele proprii
+
+  - name: Standard
+    price: 750
+    currency: EUR
+    highlight: true
+    deliverables:
+      - Episod complet de 45-60 minute cu moderare profesională
+      - Filmare dedicată produselor tale (ambalaje, texturi, aplicare)
+      - 5 clipuri pentru social media (Instagram, TikTok, Facebook)
+      - Setup profesional de studio cu iluminare specializată beauty
+      - Toate fișierele video pentru distribuție pe canalele proprii
+      - Fotografii profesionale de produs (10 imagini editate)
+
+  - name: Premium
+    price: 1200
+    currency: EUR
+    highlight: false
+    deliverables:
+      - Tot ce include pachetul Standard
+      - 5 reeluri profesionale (format lung, storytelling)
+      - Filmare B-roll extinsă pentru conținut adițional
+      - 20 fotografii profesionale de produs editate
+      - Consultanță strategie de conținut (1 oră)
 
 payment_terms: Avans 50% la rezervare, restul înainte de filmare
 
@@ -19,14 +48,6 @@ format:
     text: Discuții despre brand, ingrediente, proces și viziune
   - icon: sparkles-outline
     text: "Focus pe produse: creme, serumuri, uleiuri, tratamente"
-
-deliverables:
-  - Episod complet de 45-60 minute cu moderare profesională
-  - Filmare dedicată produselor tale (ambalaje, texturi, aplicare)
-  - 5 clipuri pentru social media (Instagram, TikTok, Facebook)
-  - Setup profesional de studio cu iluminare specializată beauty
-  - Toate fișierele video pentru distribuție pe canalele proprii
-  - Fotografii profesionale de produs (10 imagini editate)
 
 team:
   - name: Gianina Corondan

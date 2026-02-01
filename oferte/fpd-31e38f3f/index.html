@@ -76,28 +76,33 @@
             </div>
           </section>
 
-          <section class="package">
+          <section class="packages">
             <div class="container">
-              <h2>${meta.sections?.package?.title || 'Ce primesti'}</h2>
-              <div class="package-card">
-                <div class="price">
-                  <span class="amount">${meta.price?.amount || ''}</span>
-                  <span class="currency">${meta.price?.currency || ''}</span>
-                  <span class="note">${meta.price?.note || ''}</span>
-                </div>
-                <ul class="deliverables">
-                  ${(meta.deliverables || []).map(item => `
-                    <li>
-                      <ion-icon name="checkmark-circle-outline"></ion-icon>
-                      <span>${item}</span>
-                    </li>
-                  `).join('')}
-                </ul>
-                <p class="payment-terms">
-                  <ion-icon name="information-circle-outline"></ion-icon>
-                  ${meta.payment_terms || ''}
-                </p>
+              <h2>Pachete</h2>
+              <div class="packages-grid">
+                ${(meta.packages || []).map(pkg => `
+                  <div class="package-card ${pkg.highlight ? 'highlighted' : ''}">
+                    <h3 class="package-name">${pkg.name}</h3>
+                    <div class="price">
+                      <span class="amount">${pkg.price}</span>
+                      <span class="currency">${pkg.currency}</span>
+                      <span class="note">+ TVA</span>
+                    </div>
+                    <ul class="deliverables">
+                      ${(pkg.deliverables || []).map(item => `
+                        <li>
+                          <ion-icon name="checkmark-circle-outline"></ion-icon>
+                          <span>${item}</span>
+                        </li>
+                      `).join('')}
+                    </ul>
+                  </div>
+                `).join('')}
               </div>
+              <p class="payment-terms">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                ${meta.payment_terms || ''}
+              </p>
             </div>
           </section>
 

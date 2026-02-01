@@ -101,25 +101,56 @@ h2 {
     margin-top: 2px;
 }
 
-/* Package */
+/* Packages */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
 .package-card {
     background: var(--color-card);
     border-radius: 12px;
-    padding: 40px;
+    padding: 32px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card.highlighted {
+    border: 2px solid var(--color-text);
+    transform: scale(1.02);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.package-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--color-text);
+}
+
+.package-card.highlighted .package-name::after {
+    content: " - Recomandat";
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-text-light);
 }
 
 .price {
     text-align: center;
-    margin-bottom: 32px;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
     border-bottom: 1px solid var(--color-border);
 }
 
 .price .amount {
     font-family: var(--font-body);
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--color-text);
     font-variant-numeric: tabular-nums;
@@ -127,7 +158,7 @@ h2 {
 }
 
 .price .currency {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--color-text);
     vertical-align: super;
     margin-left: 4px;
@@ -137,7 +168,7 @@ h2 {
 
 .price .note {
     display: block;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--color-text-light);
     margin-top: 4px;
 }
@@ -145,8 +176,12 @@ h2 {
 .deliverables {
     list-style: none;
     display: grid;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.packages-grid .deliverables {
+    font-size: 0.9rem;
 }
 
 .deliverables li {
@@ -165,6 +200,7 @@ h2 {
 .payment-terms {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     padding: 16px;
     background: var(--color-bg-alt);
