@@ -1,53 +1,53 @@
 ---
 slug: faza-pe-delicatete
-title: Faza pe Delicatete
-subtitle: Podcast video dedicat antreprenorilor locali din domeniul cosmeticelor si wellbeing
+title: Faza pe Delicatețe
+subtitle: Podcast video dedicat antreprenorilor locali din domeniul cosmeticelor și wellbeing
 
 price:
   amount: 750
   currency: EUR
   note: "+ TVA"
 
-payment_terms: Avans 50% la rezervare, restul inainte de filmare
+payment_terms: Avans 50% la rezervare, restul înainte de filmare
 
 format:
   - icon: time-outline
     text: Interviu de 45-60 minute moderat de Gianina Corondan
   - icon: videocam-outline
-    text: Filmare profesionala in studioul Alt Nivel
+    text: Filmare profesională în studioul Alt Nivel
   - icon: chatbubbles-outline
-    text: Discutii despre brand, ingrediente, proces si viziune
+    text: Discuții despre brand, ingrediente, proces și viziune
   - icon: sparkles-outline
     text: "Focus pe produse: creme, serumuri, uleiuri, tratamente"
 
 deliverables:
-  - Episod complet de 45-60 minute cu moderare profesionala
-  - Filmare dedicata produselor tale (ambalaje, texturi, aplicare)
+  - Episod complet de 45-60 minute cu moderare profesională
+  - Filmare dedicată produselor tale (ambalaje, texturi, aplicare)
   - 5 clipuri pentru social media (Instagram, TikTok, Facebook)
-  - Setup profesional de studio cu iluminare specializata beauty
-  - Toate fisierele video pentru distributie pe canalele proprii
+  - Setup profesional de studio cu iluminare specializată beauty
+  - Toate fișierele video pentru distribuție pe canalele proprii
   - Fotografii profesionale de produs (10 imagini editate)
 
 team:
   - name: Gianina Corondan
     role: Moderator - personalitate TV
   - name: Marius Tudose
-    role: Fotograf si coordonator tehnic
+    role: Fotograf și coordonator tehnic
   - name: Marina Sarmaniuc
-    role: Account si marketing
+    role: Account și marketing
   - name: Filip Gabriel
-    role: Videograf productii comerciale
+    role: Videograf producții comerciale
 
 ideal_for:
   - Branduri locale de cosmetice naturale
-  - Producatori de sapunuri si produse artizanale
-  - Studiouri de beauty si wellness
-  - Aromaterapeuti si creatori de uleiuri esentiale
-  - Branduri de ingrijire a pielii si parului
-  - Centre de spa si wellbeing
-  - Creatori de lumanari parfumate si produse de ambient
+  - Producători de săpunuri și produse artizanale
+  - Studiouri de beauty și wellness
+  - Aromaterapeuți și creatori de uleiuri esențiale
+  - Branduri de îngrijire a pielii și părului
+  - Centre de spa și wellbeing
+  - Creatori de lumânări parfumate și produse de ambient
 
-cta_subtitle: Locuri limitate - doar 5 spoturi disponibile per editie
+cta_subtitle: Locuri limitate - doar 5 spoturi disponibile per ediție
 
 form_fields:
   - name: firstName
@@ -71,19 +71,19 @@ form_fields:
     type: text
     required: true
   - name: description
-    label: Descrie pe scurt brandul si produsele tale
+    label: Descrie pe scurt brandul și produsele tale
     type: textarea
     required: true
   - name: website
-    label: Website / Instagram (optional)
+    label: Website / Instagram (opțional)
     type: text
     required: false
 ---
 
-# Faza pe Delicatete
+# Faza pe Delicatețe
 
 ## Despre ce e vorba?
 
-Un spatiu dedicat povestilor din spatele brandurilor locale de cosmetice, produse de ingrijire si wellbeing. Dialoguri autentice despre pasiune, ingrediente naturale, ritualuri de frumusete si provocarile zilnice ale antreprenoriatului in industria beauty.
+Un spațiu dedicat poveștilor din spatele brandurilor locale de cosmetice, produse de îngrijire și wellbeing. Dialoguri autentice despre pasiune, ingrediente naturale, ritualuri de frumusețe și provocările zilnice ale antreprenoriatului în industria beauty.
 
-Filmam intr-un studio amenajat ca un spatiu de relaxare si ingrijire, cu o atmosfera calda si primitoare, perfecta pentru a evidentia produsele tale si povestea din spatele lor.
+Filmăm într-un studio amenajat ca un spațiu de relaxare și îngrijire, cu o atmosferă caldă și primitoare, perfectă pentru a evidenția produsele tale și povestea din spatele lor.

@@ -57,8 +57,8 @@
         <main>
           <section class="intro">
             <div class="container">
-              <h2>${meta.sections?.intro?.title || 'Despre ce e vorba?'}</h2>
-              ${marked.parse(sections.despre_ce_e_vorba_ || sections.intro || '')}
+              <h2>Despre ce e vorba?</h2>
+              ${marked.parse((sections.despre_ce_e_vorba_ || sections.intro || '').replace(/^##[^\n]*\n/, ''))}
             </div>
           </section>
 
@@ -126,7 +126,7 @@
 
           <section class="cta">
             <div class="container">
-              <h2>Rezerva-ti locul</h2>
+              <h2>Rezervă-ți locul</h2>
               <p>${meta.cta_subtitle || 'Locuri limitate - doar 5 spoturi disponibile per editie'}</p>
               <form class="reservation-form" id="reservationForm">
                 <div class="form-row">
@@ -165,7 +165,7 @@
 
         <footer>
           <div class="container">
-            <p>Alt Nivel Studio - Doua etaje mai sus, infinit la creativitate</p>
+            <p>Alt Nivel Studio - Două etaje mai sus, infinit la creativitate</p>
             <div class="footer-links">
               <a href="https://www.altnivel.studio" target="_blank">
                 <ion-icon name="globe-outline"></ion-icon>
