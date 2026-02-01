@@ -1,7 +1,7 @@
 ---
 slug: faza-pe-delicatete
 title: Faza pe Delicatețe
-subtitle: Podcast video dedicat antreprenorilor locali din domeniul cosmeticelor și wellbeing
+subtitle: Frumusețe, sănătate, stare de bine (wellbeing) - cosmetice, produse care susțin sănătatea și starea de bine
 
 packages:
   - name: Basic
@@ -21,7 +21,7 @@ packages:
     deliverables:
       - Episod complet de 45-60 minute cu moderare profesională
       - Filmare dedicată produselor tale (ambalaje, texturi, aplicare)
-      - 5 clipuri pentru social media (Instagram, TikTok, Facebook)
+      - 3 reeluri pentru social media (Instagram, TikTok, Facebook)
       - Setup profesional de studio cu iluminare specializată beauty
       - Toate fișierele video pentru distribuție pe canalele proprii
       - Fotografii profesionale de produs (10 imagini editate)
@@ -67,6 +67,8 @@ ideal_for:
   - Branduri de îngrijire a pielii și părului
   - Centre de spa și wellbeing
   - Creatori de lumânări parfumate și produse de ambient
+  - Apă naturală și ceaiuri
+  - Suplimente naturale și remedii naturiste
 
 cta_subtitle: Locuri limitate - doar 5 spoturi disponibile per ediție
 
