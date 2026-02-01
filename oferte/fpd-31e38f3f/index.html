@@ -3,126 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faza pe Delicatete - Alt Nivel Studio</title>
+  <title>Alt Nivel Studio</title>
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Faza pe Delicatete</h1>
-      <p class="subtitle">Podcast video dedicat antreprenorilor locali din domeniul cosmeticelor si wellbeing</p>
-    </div>
-  </header>
+  <div id="app"></div>
 
-  <main>
-    <section>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    async function loadContent() {
+      const res = await fetch('content.md');
+      const text = await res.text();
+
+      // Parse frontmatter
+      const match = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+      const meta = jsyaml.load(match[1]);
+      const markdown = match[2];
+
+      // Parse markdown sections
+      const sections = {};
+      let currentSection = 'intro';
+      markdown.split('\n').forEach(line => {
+        if (line.startsWith('## ')) {
+          currentSection = line.replace('## ', '').toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9]+/g, '_');
+        }
+        sections[currentSection] = (sections[currentSection] || '') + line + '\n';
+      });
+
+      // Update title
+      document.title = `${meta.title} - Alt Nivel Studio`;
+
+      // Render
+      document.getElementById('app').innerHTML = `
+        <header class="hero">
           <div class="container">
-            <h2>Despre ce e vorba?</h2>
-            
-
-<p>Un spatiu dedicat povestilor din spatele brandurilor locale de cosmetice, produse de ingrijire si wellbeing. Dialoguri autentice despre pasiune, ingrediente naturale, ritualuri de frumusete si provocarile zilnice ale antreprenoriatului in industria beauty.</p>
-
-<p>Filmam intr-un studio amenajat ca un spatiu de relaxare si ingrijire, cu o atmosfera calda si primitoare, perfecta pentru a evidentia produsele tale si povestea din spatele lor.</p>
-
-
+            <h1>${meta.title}</h1>
+            <p class="subtitle">${meta.subtitle || ''}</p>
           </div>
-        </section>
-<section>
-          <div class="container">
-            <h2>Formatul</h2>
-            
+        </header>
 
-<ul><li>Interviu de 45-60 minute moderat de Gianina Corondan</li>
-<li>Filmare profesionala in studioul Alt Nivel</li>
-<li>Discutii despre brand, ingrediente, proces si viziune</li>
-<li>Focus pe produse: creme, serumuri, uleiuri, tratamente</li>
-</ul>
-
-          </div>
-        </section>
-<section class="package">
+        <main>
+          <section class="intro">
             <div class="container">
-              <h2>Ce primesti</h2>
+              <h2>${meta.sections?.intro?.title || 'Despre ce e vorba?'}</h2>
+              ${marked.parse(sections.despre_ce_e_vorba_ || sections.intro || '')}
+            </div>
+          </section>
+
+          <section class="format">
+            <div class="container">
+              <h2>${meta.sections?.format?.title || 'Formatul'}</h2>
+              <ul class="format-list">
+                ${(meta.format || []).map(item => `
+                  <li>
+                    <ion-icon name="${item.icon}"></ion-icon>
+                    <span>${item.text}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </section>
+
+          <section class="package">
+            <div class="container">
+              <h2>${meta.sections?.package?.title || 'Ce primesti'}</h2>
               <div class="package-card">
                 <div class="price">
-                  <span class="amount"></span>
-                  <span class="currency"></span>
-                  <span class="note"></span>
+                  <span class="amount">${meta.price?.amount || ''}</span>
+                  <span class="currency">${meta.price?.currency || ''}</span>
+                  <span class="note">${meta.price?.note || ''}</span>
                 </div>
-                <ul class="deliverables"><li>Episod complet de 45-60 minute cu moderare profesionala</li>
-<li>Filmare dedicata produselor tale (ambalaje, texturi, aplicare)</li>
-<li>5 clipuri pentru social media (Instagram, TikTok, Facebook)</li>
-<li>Setup profesional de studio cu iluminare specializata beauty</li>
-<li>Toate fisierele video pentru distributie pe canalele proprii</li>
-<li>Fotografii profesionale de produs (10 imagini editate)</li>
-</ul>
-                <p class="payment-terms">Avans 50% la rezervare, restul inainte de filmare</p>
+                <ul class="deliverables">
+                  ${(meta.deliverables || []).map(item => `
+                    <li>
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                      <span>${item}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+                <p class="payment-terms">
+                  <ion-icon name="information-circle-outline"></ion-icon>
+                  ${meta.payment_terms || ''}
+                </p>
               </div>
             </div>
           </section>
-<section>
-          <div class="container">
-            <h2>Pentru cine e acest format?</h2>
-            
 
-<ul><li>Branduri locale de cosmetice naturale</li>
-<li>Producatori de sapunuri si produse artizanale</li>
-<li>Studiouri de beauty si wellness</li>
-<li>Aromaterapeuti si creatori de uleiuri esentiale</li>
-<li>Branduri de ingrijire a pielii si parului</li>
-<li>Centre de spa si wellbeing</li>
-<li>Creatori de lumanari parfumate si produse de ambient</li>
-</ul>
+          <section class="team">
+            <div class="container">
+              <h2>Echipa</h2>
+              <div class="team-grid">
+                ${(meta.team || []).map(m => `
+                  <div class="team-member">
+                    <h3>${m.name}</h3>
+                    <p>${m.role}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
 
-          </div>
-        </section>
-<section class="cta">
+          <section class="ideal-for">
+            <div class="container">
+              <h2>${meta.sections?.ideal_for?.title || 'Pentru cine e acest format?'}</h2>
+              <ul class="ideal-list">
+                ${(meta.ideal_for || []).map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            </div>
+          </section>
+
+          <section class="cta">
             <div class="container">
               <h2>Rezerva-ti locul</h2>
-              <p>Locuri limitate - doar 5 spoturi disponibile per editie.</p>
+              <p>${meta.cta_subtitle || 'Locuri limitate - doar 5 spoturi disponibile per editie'}</p>
               <form class="reservation-form" id="reservationForm">
-                <div class="form-group">
-      <label for="firstName">Prenume</label>
-      <input type="text" id="firstName" name="firstName" required>
-    </div>
-<div class="form-group">
-      <label for="lastName">Nume</label>
-      <input type="text" id="lastName" name="lastName" required>
-    </div>
-<div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-<div class="form-group">
-      <label for="phone">Telefon</label>
-      <input type="tel" id="phone" name="phone" required>
-    </div>
-<div class="form-group">
-      <label for="brandName">Numele brandului</label>
-      <input type="text" id="brandName" name="brandName" required>
-    </div>
-<div class="form-group">
-        <label for="description">Descrie pe scurt brandul si produsele tale</label>
-        <textarea id="description" name="description" rows="4" required></textarea>
-      </div>
-<div class="form-group">
-      <label for="website">Website / Instagram (optional)</label>
-      <input type="text" id="website" name="website" >
-    </div>
-                <button type="submit" class="submit-btn">Trimite cererea</button>
+                <div class="form-row">
+                  ${(meta.form_fields || []).slice(0, 2).map(f => `
+                    <div class="form-group">
+                      <label for="${f.name}">${f.label}</label>
+                      <input type="${f.type}" id="${f.name}" name="${f.name}" ${f.required ? 'required' : ''}>
+                    </div>
+                  `).join('')}
+                </div>
+                <div class="form-row">
+                  ${(meta.form_fields || []).slice(2, 4).map(f => `
+                    <div class="form-group">
+                      <label for="${f.name}">${f.label}</label>
+                      <input type="${f.type}" id="${f.name}" name="${f.name}" ${f.required ? 'required' : ''}>
+                    </div>
+                  `).join('')}
+                </div>
+                ${(meta.form_fields || []).slice(4).map(f => `
+                  <div class="form-group">
+                    <label for="${f.name}">${f.label}</label>
+                    ${f.type === 'textarea'
+                      ? `<textarea id="${f.name}" name="${f.name}" rows="4" ${f.required ? 'required' : ''}></textarea>`
+                      : `<input type="${f.type}" id="${f.name}" name="${f.name}" ${f.required ? 'required' : ''}>`
+                    }
+                  </div>
+                `).join('')}
+                <button type="submit" class="submit-btn">
+                  <ion-icon name="send-outline"></ion-icon>
+                  Trimite cererea
+                </button>
               </form>
             </div>
           </section>
-  </main>
+        </main>
 
-  <footer>
-    <div class="container">
-      <p>Alt Nivel Studio - Doua etaje mai sus, infinit la creativitate</p>
-      <div class="footer-links">
-        <a href="https://www.altnivel.studio">altnivel.studio</a>
-        <a href="mailto:hello@altnivel.studio">hello@altnivel.studio</a>
-      </div>
-    </div>
-  </footer>
+        <footer>
+          <div class="container">
+            <p>Alt Nivel Studio - Doua etaje mai sus, infinit la creativitate</p>
+            <div class="footer-links">
+              <a href="https://www.altnivel.studio" target="_blank">
+                <ion-icon name="globe-outline"></ion-icon>
+                altnivel.studio
+              </a>
+              <a href="mailto:hello@altnivel.studio">
+                <ion-icon name="mail-outline"></ion-icon>
+                hello@altnivel.studio
+              </a>
+            </div>
+          </div>
+        </footer>
+      `;
+    }
+
+    loadContent();
+  </script>
 </body>
 </html>
