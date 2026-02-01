@@ -122,6 +122,8 @@ h2 {
     font-size: 4rem;
     font-weight: 700;
     color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
 }
 
 .price .currency {
