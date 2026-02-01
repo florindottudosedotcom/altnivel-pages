@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagini - Alt Nivel Studio</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f7f7;
+      --color-card: #ffffff;
+      --color-text: #3d3d3d;
+      --color-text-light: #6b6b6b;
+      --color-border: #e5e5e5;
+      --font-heading: 'Georgia', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    header {
+      padding: 80px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    header p {
+      color: var(--color-text-light);
+      font-size: 1.125rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 64px 0;
+      background: var(--color-bg-alt);
+    }
+
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .page-card {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--color-border);
+      text-decoration: none;
+      color: var(--color-text);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .page-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .page-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .page-card p {
+      color: var(--color-text-light);
+      font-size: 0.9375rem;
+      flex-grow: 1;
+    }
+
+    .page-card .page-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .page-card ion-icon {
+      font-size: 1.125rem;
+    }
+
+    footer {
+      background: var(--color-text);
+      color: var(--color-bg);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    footer p {
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--color-bg);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 60px 24px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 48px 0;
+      }
+
+      .page-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Alt Nivel Studio</h1>
+      <p>Pagini și oferte</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="pages-grid">
+        <a href="podcast/" class="page-card">
+          <h2>Producție Podcast</h2>
+          <p>Echipament profesional, studio amenajat și echipă dedicată pentru podcastul tău. Include showcase-ul "Vizită de Lucru".</p>
+          <div class="page-meta">
+            <ion-icon name="mic-outline"></ion-icon>
+            Servicii podcast
+          </div>
+        </a>
+
+        <a href="oferte/fpd-31e38f3f/" class="page-card">
+          <h2>Faza pe Delicatețe</h2>
+          <p>Frumusețe, sănătate, stare de bine - format dedicat brandurilor de cosmetice și wellness.</p>
+          <div class="page-meta">
+            <ion-icon name="sparkles-outline"></ion-icon>
+            Ofertă
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Alt Nivel Studio - Două etaje mai sus, infinit la creativitate</p>
+      <div class="footer-links">
+        <a href="https://www.altnivel.studio" target="_blank">
+          <ion-icon name="globe-outline"></ion-icon>
+          altnivel.studio
+        </a>
+        <a href="mailto:hello@altnivel.studio">
+          <ion-icon name="mail-outline"></ion-icon>
+          hello@altnivel.studio
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
