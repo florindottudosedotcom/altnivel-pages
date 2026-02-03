@@ -310,7 +310,7 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"><\/script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"><\/script>
 <style>
-  .benefit-card, .topic-card, .zone-card {
+  .benefit-card, .zone-card {
     background: #ffffff;
     border-radius: 16px;
     padding: 40px 24px;
@@ -332,17 +332,59 @@
     font-size: 24px;
     color: #1a1a1a;
   }
-  .benefit-card h3, .topic-card h3, .zone-card h3 {
+  .benefit-card h3, .zone-card h3 {
     font-family: Georgia, serif;
     color: #1a1a1a;
     font-size: 1.25rem;
     font-weight: 400;
     margin-bottom: 12px;
   }
-  .benefit-card p, .topic-card p, .zone-card p {
+  .benefit-card p, .zone-card p {
     color: #666666;
     font-size: 0.9375rem;
     line-height: 1.6;
+  }
+  .topic-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 32px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    position: relative;
+  }
+  .topic-number {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    color: #e5e5e5;
+  }
+  .topic-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .topic-icon ion-icon {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+  }
+  .topic-info h3 {
+    font-family: Georgia, serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+  .topic-info p {
+    font-size: 0.9375rem;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
   }
 </style>
 <!-- /wp:html -->
@@ -427,57 +469,48 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"}}}} -->
-<div class="wp-block-columns">\${(meta.topics || []).slice(0, 2).map((t, i) => \`<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#f7f7f7"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-background" style="border-radius:12px;background-color:#f7f7f7;padding:32px">
-<!-- wp:paragraph {"style":{"color":{"text":"#e5e5e5"},"typography":{"fontSize":"2rem"}}} -->
-<p style="color:#e5e5e5;font-size:2rem;text-align:right">0\${i + 1}</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3,"style":{"color":{"text":"#1a1a1a"}}} -->
-<h3 style="color:#1a1a1a">\${t.title}</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#666666"}}} -->
-<p style="color:#666666">\${t.description}</p>
-<!-- /wp:paragraph -->
+<div class="wp-block-columns">${(meta.topics || []).slice(0, 2).map((t, i) => `<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="topic-item">
+  <span class="topic-number">0${i + 1}</span>
+  <div class="topic-icon"><ion-icon name="${t.icon}"></ion-icon></div>
+  <div class="topic-info">
+    <h3>${t.title}</h3>
+    <p>${t.description}</p>
+  </div>
 </div>
-<!-- /wp:group --></div>
-<!-- /wp:column -->\`).join('\\n')}</div>
+<!-- /wp:html --></div>
+<!-- /wp:column -->`).join('\n')}</div>
 <!-- /wp:columns -->
 
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"},"margin":{"top":"24px"}}}} -->
-<div class="wp-block-columns" style="margin-top:24px">\${(meta.topics || []).slice(2, 4).map((t, i) => \`<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#f7f7f7"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-background" style="border-radius:12px;background-color:#f7f7f7;padding:32px">
-<!-- wp:paragraph {"style":{"color":{"text":"#e5e5e5"},"typography":{"fontSize":"2rem"}}} -->
-<p style="color:#e5e5e5;font-size:2rem;text-align:right">0\${i + 3}</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3,"style":{"color":{"text":"#1a1a1a"}}} -->
-<h3 style="color:#1a1a1a">\${t.title}</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#666666"}}} -->
-<p style="color:#666666">\${t.description}</p>
-<!-- /wp:paragraph -->
+<div class="wp-block-columns" style="margin-top:24px">${(meta.topics || []).slice(2, 4).map((t, i) => `<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="topic-item">
+  <span class="topic-number">0${i + 3}</span>
+  <div class="topic-icon"><ion-icon name="${t.icon}"></ion-icon></div>
+  <div class="topic-info">
+    <h3>${t.title}</h3>
+    <p>${t.description}</p>
+  </div>
 </div>
-<!-- /wp:group --></div>
-<!-- /wp:column -->\`).join('\\n')}</div>
+<!-- /wp:html --></div>
+<!-- /wp:column -->`).join('\n')}</div>
 <!-- /wp:columns -->
 
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"},"margin":{"top":"24px"}}}} -->
-<div class="wp-block-columns" style="margin-top:24px">\${(meta.topics || []).slice(4, 6).map((t, i) => \`<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#f7f7f7"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-background" style="border-radius:12px;background-color:#f7f7f7;padding:32px">
-<!-- wp:paragraph {"style":{"color":{"text":"#e5e5e5"},"typography":{"fontSize":"2rem"}}} -->
-<p style="color:#e5e5e5;font-size:2rem;text-align:right">0\${i + 5}</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3,"style":{"color":{"text":"#1a1a1a"}}} -->
-<h3 style="color:#1a1a1a">\${t.title}</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#666666"}}} -->
-<p style="color:#666666">\${t.description}</p>
-<!-- /wp:paragraph -->
+<div class="wp-block-columns" style="margin-top:24px">${(meta.topics || []).slice(4, 6).map((t, i) => `<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="topic-item">
+  <span class="topic-number">0${i + 5}</span>
+  <div class="topic-icon"><ion-icon name="${t.icon}"></ion-icon></div>
+  <div class="topic-info">
+    <h3>${t.title}</h3>
+    <p>${t.description}</p>
+  </div>
 </div>
-<!-- /wp:group --></div>
-<!-- /wp:column -->\`).join('\\n')}</div>
+<!-- /wp:html --></div>
+<!-- /wp:column -->`).join('\n')}</div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
