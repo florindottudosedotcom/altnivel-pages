@@ -422,7 +422,75 @@
 
   <script>
     function downloadWordPressCode() {
-      const wpCode = `<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
+      const wpCode = `<!-- wp:html -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Custom fonts for Therme VDL page */
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .wp-block-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-weight: 400;
+  }
+  .entry-content p,
+  .entry-content li,
+  .entry-content blockquote,
+  .wp-block-paragraph,
+  .wp-block-list {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif !important;
+  }
+  .entry-content .wp-block-cover,
+  .entry-content .wp-block-group {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif !important;
+  }
+  /* Full-width sections */
+  .entry-content > .wp-block-cover,
+  .entry-content > .wp-block-group {
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+  /* Hero title styling */
+  .entry-content h1.wp-block-heading {
+    font-size: 72px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+  }
+  /* Section headings */
+  .entry-content h2.wp-block-heading {
+    font-size: 48px !important;
+    line-height: 1.2 !important;
+  }
+  /* Card headings */
+  .entry-content h3.wp-block-heading {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  /* Quote styling */
+  .entry-content blockquote {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-style: italic !important;
+    font-size: 24px !important;
+    line-height: 1.6 !important;
+  }
+  /* Price numbers */
+  .entry-content .has-text-align-center[style*="font-size:48px"] {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-weight: 600 !important;
+  }
+  /* Remove default theme spacing */
+  .entry-content > * + * {
+    margin-top: 0 !important;
+  }
+</style>
+<!-- /wp:html -->
+
+<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
 <div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#0a2e3d"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"60px","bottom":"60px"}}},"layout":{"type":"constrained","contentSize":"800px"}} -->
 <div class="wp-block-group" style="padding-top:60px;padding-bottom:60px"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"12px","letterSpacing":"0.2em","textTransform":"uppercase"}},"textColor":"white"} -->
 <p class="has-text-align-center has-white-color has-text-color" style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase">Propunere de parteneriat</p>
@@ -456,13 +524,13 @@
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:group {"style":{"color":{"background":"#c9a962"},"spacing":{"padding":{"top":"24px","bottom":"24px"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","style":{"color":{"background":"#c9a962"},"spacing":{"padding":{"top":"24px","bottom":"24px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-background" style="background-color:#c9a962;padding-top:24px;padding-bottom:24px"><!-- wp:paragraph {"align":"center","style":{"color":{"text":"#0a2e3d"}}} -->
 <p class="has-text-align-center has-text-color" style="color:#0a2e3d">Ianuarie 2026 marchează <strong>10 ani de Therme București</strong> — un deceniu de wellness la superlativ, în care milioane de români au redescoperit starea de bine autentică.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
+<!-- wp:group {"align":"full","style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
 <div class="wp-block-group has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"200px"} -->
 <div class="wp-block-column" style="flex-basis:200px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","letterSpacing":"0.15em","textTransform":"uppercase"},"color":{"text":"#7a9aa5"}}} -->
@@ -486,8 +554,8 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
-<div class="wp-block-group" style="padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group alignfull" style="padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">De ce Therme?</h2>
 <!-- /wp:heading -->
 
@@ -540,8 +608,8 @@
 <!-- /wp:quote --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
-<div class="wp-block-group has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<!-- wp:group {"align":"full","style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Subiecte propuse</h2>
 <!-- /wp:heading -->
 
@@ -626,7 +694,7 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":600,"minHeightUnit":"px","isDark":false} -->
+<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":600,"minHeightUnit":"px","isDark":false,"align":"full"} -->
 <div class="wp-block-cover is-light" style="min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#0a2e3d"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#ffffff"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#ffffff">Ce câștigă Therme</h2>
 <!-- /wp:heading -->
@@ -690,8 +758,8 @@
 <!-- /wp:columns --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
-<div class="wp-block-group" style="padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group alignfull" style="padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Pachete disponibile</h2>
 <!-- /wp:heading -->
 
@@ -860,8 +928,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
-<div class="wp-block-group has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<!-- wp:group {"align":"full","style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Echipa</h2>
 <!-- /wp:heading -->
 
@@ -908,7 +976,7 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:cover {"customOverlayColor":"#1a5f7a","minHeight":400,"minHeightUnit":"px","isDark":false} -->
+<!-- wp:cover {"customOverlayColor":"#1a5f7a","minHeight":400,"minHeightUnit":"px","isDark":false,"align":"full"} -->
 <div class="wp-block-cover is-light" style="min-height:400px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#1a5f7a"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#ffffff"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#ffffff">Să construim împreună povestea celor 10 ani de wellness</h2>
 <!-- /wp:heading -->
@@ -928,7 +996,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:group {"style":{"color":{"background":"#0a2e3d"},"spacing":{"padding":{"top":"48px","bottom":"48px"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","style":{"color":{"background":"#0a2e3d"},"spacing":{"padding":{"top":"48px","bottom":"48px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-background" style="background-color:#0a2e3d;padding-top:48px;padding-bottom:48px"><!-- wp:paragraph {"align":"center","style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"20px"}}} -->
 <p class="has-text-align-center has-text-color" style="color:#ffffff;font-size:20px">Alt Nivel Studio</p>
 <!-- /wp:paragraph -->
