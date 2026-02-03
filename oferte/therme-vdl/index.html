@@ -426,6 +426,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <style>
   /* Custom fonts for Therme VDL page */
   .entry-content h1,
@@ -486,6 +488,29 @@
   /* Remove default theme spacing */
   .entry-content > * + * {
     margin-top: 0 !important;
+  }
+  /* Benefit cards styling */
+  .benefit-card {
+    background: rgba(255,255,255,0.08) !important;
+    border-radius: 12px !important;
+    padding: 32px !important;
+    text-align: center !important;
+  }
+  .benefit-card ion-icon {
+    font-size: 40px !important;
+    color: #a8d8e0 !important;
+    margin-bottom: 16px !important;
+    display: block !important;
+  }
+  .benefit-card h3 {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+  }
+  .benefit-card p {
+    color: #a8d8e0 !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
   }
 </style>
 <!-- /wp:html -->
@@ -694,66 +719,76 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":600,"minHeightUnit":"px","isDark":false,"align":"full"} -->
-<div class="wp-block-cover alignfull is-light" style="min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#0a2e3d"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#ffffff"}}} -->
+<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":800,"minHeightUnit":"px","isDark":false,"align":"full"} -->
+<div class="wp-block-cover alignfull is-light" style="min-height:800px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#0a2e3d"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#ffffff"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#ffffff">Ce câștigă Therme</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#a8d8e0"},"spacing":{"margin":{"bottom":"64px"}}}} -->
-<p class="has-text-align-center has-text-color" style="color:#a8d8e0;margin-bottom:64px">Beneficiile unui parteneriat cu Vizita de Lucru</p>
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#a8d8e0"},"spacing":{"margin":{"bottom":"48px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#a8d8e0;margin-bottom:48px">Beneficiile unui parteneriat cu Vizita de Lucru</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:columns -->
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"}}}} -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"}}} -->
-<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px">Vizibilitate Premium</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
-<p class="has-text-color" style="color:#a8d8e0">Acces la audiența Vizita de Lucru — profesioniști și decidenți interesați de calitate și autenticitate</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
-<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Storytelling Autentic</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
-<p class="has-text-color" style="color:#a8d8e0">Format conversațional care permite aprofundarea mesajelor și conectarea emoțională cu audiența</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
-<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Employer Branding</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
-<p class="has-text-color" style="color:#a8d8e0">Oportunitatea de a prezenta cultura organizațională și poveștile echipei într-un cadru profesionist</p>
-<!-- /wp:paragraph --></div>
+<div class="wp-block-column"><!-- wp:html -->
+<div class="benefit-card">
+  <ion-icon name="eye-outline"></ion-icon>
+  <h3>Vizibilitate Premium</h3>
+  <p>Acces la audiența Vizita de Lucru — profesioniști și decidenți interesați de calitate și autenticitate</p>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"}}} -->
-<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px">Conținut Multiplu</h3>
-<!-- /wp:heading -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="benefit-card">
+  <ion-icon name="chatbubbles-outline"></ion-icon>
+  <h3>Storytelling Autentic</h3>
+  <p>Format conversațional care permite aprofundarea mesajelor și conectarea emoțională cu audiența</p>
+</div>
+<!-- /wp:html --></div>
+<!-- /wp:column -->
 
-<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
-<p class="has-text-color" style="color:#a8d8e0">Un episod generează clipuri sociale, citate, articole și materiale reutilizabile pe termen lung</p>
-<!-- /wp:paragraph -->
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="benefit-card">
+  <ion-icon name="people-circle-outline"></ion-icon>
+  <h3>Employer Branding</h3>
+  <p>Oportunitatea de a prezenta cultura organizațională și poveștile echipei într-un cadru profesionist</p>
+</div>
+<!-- /wp:html --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
 
-<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
-<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Timing Strategic</h3>
-<!-- /wp:heading -->
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"},"margin":{"top":"24px"}}}} -->
+<div class="wp-block-columns" style="margin-top:24px"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="benefit-card">
+  <ion-icon name="share-social-outline"></ion-icon>
+  <h3>Conținut Multiplu</h3>
+  <p>Un episod generează clipuri sociale, citate, articole și materiale reutilizabile pe termen lung</p>
+</div>
+<!-- /wp:html --></div>
+<!-- /wp:column -->
 
-<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
-<p class="has-text-color" style="color:#a8d8e0">Luna martie — luna femeii — context perfect pentru mesaje despre frumusețe și stare de bine</p>
-<!-- /wp:paragraph -->
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="benefit-card">
+  <ion-icon name="calendar-outline"></ion-icon>
+  <h3>Timing Strategic</h3>
+  <p>Luna martie — luna femeii — context perfect pentru mesaje despre frumusețe și stare de bine</p>
+</div>
+<!-- /wp:html --></div>
+<!-- /wp:column -->
 
-<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
-<h3 class="wp-block-heading has-text-align-left has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Asociere de Brand</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
-<p class="has-text-color" style="color:#a8d8e0">Asocierea cu seria Delicatețe și cu valorile de calitate, prospețime și responsabilitate</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:html -->
+<div class="benefit-card">
+  <ion-icon name="ribbon-outline"></ion-icon>
+  <h3>Asociere de Brand</h3>
+  <p>Asocierea cu seria Delicatețe și cu valorile de calitate, prospețime și responsabilitate</p>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div></div>
 <!-- /wp:cover -->
