@@ -10,6 +10,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    /* Download Button Styles */
+    .wp-download-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      background: linear-gradient(135deg, #1a5f7a 0%, #2d8a9e 100%);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(10, 46, 61, 0.3);
+      transition: all 0.3s ease;
+      z-index: 9999;
+    }
+    .wp-download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(10, 46, 61, 0.4);
+    }
+    .wp-download-btn ion-icon {
+      font-size: 1.25rem;
+    }
+    .wp-download-tooltip {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      margin-bottom: 12px;
+      padding: 12px 16px;
+      background: #0a2e3d;
+      color: #fff;
+      font-size: 0.8125rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .wp-download-btn:hover .wp-download-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+    .wp-download-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      right: 24px;
+      border: 6px solid transparent;
+      border-top-color: #0a2e3d;
+    }
+  </style>
 </head>
 <body>
   <div class="page-wrapper">
@@ -354,5 +412,547 @@
     </footer>
 
   </div>
+
+  <!-- Download Button -->
+  <button class="wp-download-btn" onclick="downloadWordPressCode()">
+    <ion-icon name="download-outline"></ion-icon>
+    Descarcă cod WordPress
+    <span class="wp-download-tooltip">Copiază în Code Editor din Gutenberg</span>
+  </button>
+
+  <script>
+    function downloadWordPressCode() {
+      const wpCode = `<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
+<div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#0a2e3d"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"60px","bottom":"60px"}}},"layout":{"type":"constrained","contentSize":"800px"}} -->
+<div class="wp-block-group" style="padding-top:60px;padding-bottom:60px"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"12px","letterSpacing":"0.2em","textTransform":"uppercase"}},"textColor":"white"} -->
+<p class="has-text-align-center has-white-color has-text-color" style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase">Propunere de parteneriat</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"72px"}},"textColor":"white"} -->
+<h1 class="wp-block-heading has-text-align-center has-white-color has-text-color" style="font-size:72px">Vizita de Lucru</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"24px","fontStyle":"italic"}},"textColor":"white"} -->
+<p class="has-text-align-center has-white-color has-text-color" style="font-size:24px;font-style:italic">Faza pe Delicatețe</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"32px","bottom":"32px"}}},"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide" style="margin-top:32px;margin-bottom:32px"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"18px"}},"textColor":"white"} -->
+<p class="has-text-align-center has-white-color has-text-color" style="font-size:18px">O zi de podcast dedicată liderului wellness din România</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"48px"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+<div class="wp-block-group" style="margin-top:48px"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"12px","letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"white"} -->
+<p class="has-text-align-center has-white-color has-text-color" style="font-size:12px;letter-spacing:0.15em;text-transform:uppercase">Pentru</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"24px","fontWeight":"500"}},"textColor":"white"} -->
+<p class="has-text-align-center has-white-color has-text-color" style="font-size:24px;font-weight:500">Therme București</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div></div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"style":{"color":{"background":"#c9a962"},"spacing":{"padding":{"top":"24px","bottom":"24px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="background-color:#c9a962;padding-top:24px;padding-bottom:24px"><!-- wp:paragraph {"align":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#0a2e3d">Ianuarie 2026 marchează <strong>10 ani de Therme București</strong> — un deceniu de wellness la superlativ, în care milioane de români au redescoperit starea de bine autentică.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
+<div class="wp-block-group has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"200px"} -->
+<div class="wp-block-column" style="flex-basis:200px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","letterSpacing":"0.15em","textTransform":"uppercase"},"color":{"text":"#7a9aa5"}}} -->
+<p class="has-text-color" style="color:#7a9aa5;font-size:12px;letter-spacing:0.15em;text-transform:uppercase">Seria</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"32px"},"color":{"text":"#1a5f7a"}}} -->
+<p class="has-text-color" style="color:#1a5f7a;font-size:32px">Delicatețe</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontSize":"20px","lineHeight":"1.8"}}} -->
+<p style="font-size:20px;line-height:1.8">În cadrul podcastului <strong>Vizita de Lucru</strong>, moderat de jurnalista Gianina Corondan, demarăm o serie de episoade dedicate antreprenorilor din domeniile <em>Cosmetică, Frumusețe și Stare de bine</em> made in Romania.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-color" style="color:#4a6670">Fiindcă oamenii sunt tot mai preocupați de sănătate și frumusețe și consideră importante ingredientele naturale și prospețimea produselor, propunem publicului — în preajma lunii dedicate femeii — o paletă de informații solide legate de produsele și serviciile locale de gen, pentru a cunoaște mai bine filosofia și viziunea celor care au pus bazele acestor afaceri, cu pasiune și responsabilitate.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group" style="padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">De ce Therme?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"},"spacing":{"margin":{"bottom":"64px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670;margin-bottom:64px">Cel mai mare complex de wellness din Europa merită o poveste pe măsură</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}}} -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"16px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:16px;background-color:#e8f4f6;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Galaxy</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670">1.7 km de tobogane, piscină cu valuri și activități interactive pentru întreaga familie</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"16px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:16px;background-color:#e8f4f6;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">The Palm</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670">Oază exclusivă pentru adulți cu piscine minerale, hidro-masaj și baruri în apă</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"16px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:16px;background-color:#e8f4f6;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Elysium</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670">Saune tematice, tratamente spa personalizate și fine dining pentru wellness complet</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:quote {"style":{"color":{"text":"#1a5f7a"},"spacing":{"margin":{"top":"64px"}}},"className":"is-style-large"} -->
+<blockquote class="wp-block-quote is-style-large has-text-color" style="color:#1a5f7a;margin-top:64px"><!-- wp:paragraph -->
+<p>Aniversarea de 10 ani reprezintă momentul perfect pentru a spune povestea completă: de la viziunea fondatorilor, la oamenii care creează zilnic experiența Therme, până la ritualurile de wellness care au redefinit industria în România.</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Subiecte propuse</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"},"spacing":{"margin":{"bottom":"64px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670;margin-bottom:64px">O paletă bogată de conversații pentru o zi memorabilă de podcast</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"}}}} -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"level":3,"style":{"color":{"text":"#0a2e3d"},"typography":{"fontSize":"20px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#0a2e3d;font-size:20px">01. Filosofia Wellness</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-color" style="color:#4a6670">Cum s-a construit cultura wellness Therme și ce înseamnă starea de bine autentică în viziunea fondatorilor</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"level":3,"style":{"color":{"text":"#0a2e3d"},"typography":{"fontSize":"20px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#0a2e3d;font-size:20px">02. Entertainment & Experiențe</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-color" style="color:#4a6670">De la pool parties la La Dolce Vita Tuesday și Ladies' Wednesday — cum se creează magia Therme</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"level":3,"style":{"color":{"text":"#0a2e3d"},"typography":{"fontSize":"20px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#0a2e3d;font-size:20px">03. Ritualuri & Tratamente</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-color" style="color:#4a6670">Saune himalayene, terapii respiratorii, masaje signature — știința din spatele relaxării</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"},"margin":{"top":"24px"}}}} -->
+<div class="wp-block-columns" style="margin-top:24px"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"level":3,"style":{"color":{"text":"#0a2e3d"},"typography":{"fontSize":"20px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#0a2e3d;font-size:20px">04. Sănătate & Prevenție</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-color" style="color:#4a6670">Beneficiile terapeutice dovedite ale apelor minerale și termale</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"level":3,"style":{"color":{"text":"#0a2e3d"},"typography":{"fontSize":"20px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#0a2e3d;font-size:20px">05. Employer Branding</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-color" style="color:#4a6670">Oamenii din spatele experienței — povești autentice ale echipei Therme</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"level":3,"style":{"color":{"text":"#0a2e3d"},"typography":{"fontSize":"20px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#0a2e3d;font-size:20px">06. 10 Ani de Therme</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#4a6670"}}} -->
+<p class="has-text-color" style="color:#4a6670">Retrospectivă, realizări majore și viziunea pentru următorul deceniu de excelență</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:cover {"customOverlayColor":"#0a2e3d","minHeight":600,"minHeightUnit":"px","isDark":false} -->
+<div class="wp-block-cover is-light" style="min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#0a2e3d"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#ffffff"}}} -->
+<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#ffffff">Ce câștigă Therme</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#a8d8e0"},"spacing":{"margin":{"bottom":"64px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#a8d8e0;margin-bottom:64px">Beneficiile unui parteneriat cu Vizita de Lucru</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px">Vizibilitate Premium</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
+<p class="has-text-color" style="color:#a8d8e0">Acces la audiența Vizita de Lucru — profesioniști și decidenți interesați de calitate și autenticitate</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Storytelling Autentic</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
+<p class="has-text-color" style="color:#a8d8e0">Format conversațional care permite aprofundarea mesajelor și conectarea emoțională cu audiența</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Employer Branding</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
+<p class="has-text-color" style="color:#a8d8e0">Oportunitatea de a prezenta cultura organizațională și poveștile echipei într-un cadru profesionist</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px">Conținut Multiplu</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
+<p class="has-text-color" style="color:#a8d8e0">Un episod generează clipuri sociale, citate, articole și materiale reutilizabile pe termen lung</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
+<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Timing Strategic</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
+<p class="has-text-color" style="color:#a8d8e0">Luna martie — luna femeii — context perfect pentru mesaje despre frumusețe și stare de bine</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"18px"},"spacing":{"margin":{"top":"32px"}}}} -->
+<h3 class="wp-block-heading has-text-align-left has-text-color" style="color:#ffffff;font-size:18px;margin-top:32px">Asociere de Brand</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#a8d8e0"}}} -->
+<p class="has-text-color" style="color:#a8d8e0">Asocierea cu seria Delicatețe și cu valorile de calitate, prospețime și responsabilitate</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div></div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group" style="padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Pachete disponibile</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"},"spacing":{"margin":{"bottom":"64px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670;margin-bottom:64px">Opțiuni flexibile pentru orice nivel de colaborare</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}}} -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"border":{"width":"1px","color":"#e0e0e0","radius":"16px"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-border-color" style="border-color:#e0e0e0;border-width:1px;border-radius:16px;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Episod Single</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"},"typography":{"fontSize":"14px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5;font-size:14px">Pentru o primă colaborare</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"48px","fontWeight":"600"},"color":{"text":"#0a2e3d"},"spacing":{"margin":{"top":"24px","bottom":"24px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#0a2e3d;font-size:48px;font-weight:600;margin-top:24px;margin-bottom:24px">2.500 <span style="font-size:20px">EUR</span></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"},"typography":{"fontSize":"13px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5;font-size:13px">+ TVA</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"style":{"color":{"text":"#4a6670"},"spacing":{"margin":{"top":"24px"}}}} -->
+<ul class="has-text-color" style="color:#4a6670;margin-top:24px"><!-- wp:list-item -->
+<li>1 episod podcast (45-60 min)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Filmare profesională în studio</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Editare audio și video completă</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Publicare pe toate platformele podcast</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>3 clipuri sociale pentru promovare</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Fotografii profesionale din studio</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"border":{"width":"2px","color":"#1a5f7a","radius":"16px"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-border-color" style="border-color:#1a5f7a;border-width:2px;border-radius:16px;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:paragraph {"align":"center","style":{"color":{"background":"#1a5f7a","text":"#ffffff"},"typography":{"fontSize":"12px","letterSpacing":"0.1em","textTransform":"uppercase"},"spacing":{"padding":{"top":"6px","bottom":"6px","left":"20px","right":"20px"}},"border":{"radius":"100px"}}} -->
+<p class="has-text-color has-background has-text-align-center" style="border-radius:100px;color:#ffffff;background-color:#1a5f7a;padding-top:6px;padding-right:20px;padding-bottom:6px;padding-left:20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase">Recomandat</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Zi de Podcast</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"},"typography":{"fontSize":"14px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5;font-size:14px">Acoperire completă pentru aniversare</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"48px","fontWeight":"600"},"color":{"text":"#0a2e3d"},"spacing":{"margin":{"top":"24px","bottom":"24px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#0a2e3d;font-size:48px;font-weight:600;margin-top:24px;margin-bottom:24px">6.000 <span style="font-size:20px">EUR</span></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"},"typography":{"fontSize":"13px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5;font-size:13px">+ TVA</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"style":{"color":{"text":"#4a6670"},"spacing":{"margin":{"top":"24px"}}}} -->
+<ul class="has-text-color" style="color:#4a6670;margin-top:24px"><!-- wp:list-item -->
+<li>3 episoade podcast tematice</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Invitați multipli din echipa Therme</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Producție completă audio-video</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Publicare pe toate platformele</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>10 clipuri sociale optimizate</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Sesiune foto profesională</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Materiale pentru employer branding</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Promovare încrucișată pe canalele VDL</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"border":{"width":"1px","color":"#e0e0e0","radius":"16px"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"32px","right":"32px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-border-color" style="border-color:#e0e0e0;border-width:1px;border-radius:16px;padding-top:40px;padding-right:32px;padding-bottom:40px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Parteneriat Anual</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"},"typography":{"fontSize":"14px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5;font-size:14px">Prezență constantă pe tot parcursul anului</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"48px","fontWeight":"600"},"color":{"text":"#0a2e3d"},"spacing":{"margin":{"top":"24px","bottom":"24px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#0a2e3d;font-size:48px;font-weight:600;margin-top:24px;margin-bottom:24px">15.000 <span style="font-size:20px">EUR</span></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"},"typography":{"fontSize":"13px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5;font-size:13px">+ TVA</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"style":{"color":{"text":"#4a6670"},"spacing":{"margin":{"top":"24px"}}}} -->
+<ul class="has-text-color" style="color:#4a6670;margin-top:24px"><!-- wp:list-item -->
+<li>4 zile de podcast (12 episoade)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Planificare editorială comună</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Acoperire evenimente speciale Therme</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Conținut exclusiv pentru canalele Therme</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Prezență în seria Delicatețe</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Raportare și analiză de impact</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Prioritate la programare</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"background":"#e8f4f6","text":"#4a6670"},"spacing":{"padding":{"top":"20px","bottom":"20px","left":"24px","right":"24px"},"margin":{"top":"40px"}},"border":{"radius":"8px"}}} -->
+<p class="has-text-align-center has-text-color has-background" style="border-radius:8px;color:#4a6670;background-color:#e8f4f6;margin-top:40px;padding-top:20px;padding-right:24px;padding-bottom:20px;padding-left:24px">Plata: 50% la confirmare, 50% la livrare.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"style":{"color":{"background":"#e8f4f6"},"spacing":{"padding":{"top":"100px","bottom":"100px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group has-background" style="background-color:#e8f4f6;padding-top:100px;padding-bottom:100px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#0a2e3d"}}} -->
+<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Echipa</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"},"spacing":{"margin":{"bottom":"64px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670;margin-bottom:64px">Profesioniști cu experiență în media și producție</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"32px"}}}} -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"48px","bottom":"48px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:48px;padding-right:32px;padding-bottom:48px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Gianina Corondan</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5">Moderator & Jurnalist</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"48px","bottom":"48px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:48px;padding-right:32px;padding-bottom:48px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Filip Gabriel</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5">Producție & Regie</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"48px","bottom":"48px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#ffffff;padding-top:48px;padding-right:32px;padding-bottom:48px;padding-left:32px"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#0a2e3d"}}} -->
+<h3 class="wp-block-heading has-text-align-center has-text-color" style="color:#0a2e3d">Marius Tudose</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5">Producție Audio-Video</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:cover {"customOverlayColor":"#1a5f7a","minHeight":400,"minHeightUnit":"px","isDark":false} -->
+<div class="wp-block-cover is-light" style="min-height:400px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#1a5f7a"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#ffffff"}}} -->
+<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#ffffff">Să construim împreună povestea celor 10 ani de wellness</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#a8d8e0"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#a8d8e0">Contactați-ne pentru a discuta detaliile colaborării</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"40px"}}}} -->
+<div class="wp-block-buttons" style="margin-top:40px"><!-- wp:button {"style":{"color":{"background":"#ffffff","text":"#1a5f7a"},"border":{"radius":"100px"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"40px","right":"40px"}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="mailto:hello@altnivel.studio" style="border-radius:100px;color:#1a5f7a;background-color:#ffffff;padding-top:16px;padding-right:40px;padding-bottom:16px;padding-left:40px">hello@altnivel.studio</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#a8d8e0"},"spacing":{"margin":{"top":"20px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#a8d8e0;margin-top:20px">www.altnivel.studio</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"style":{"color":{"background":"#0a2e3d"},"spacing":{"padding":{"top":"48px","bottom":"48px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="background-color:#0a2e3d;padding-top:48px;padding-bottom:48px"><!-- wp:paragraph {"align":"center","style":{"color":{"text":"#ffffff"},"typography":{"fontSize":"20px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#ffffff;font-size:20px">Alt Nivel Studio</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#7a9aa5"},"typography":{"fontSize":"14px"}}} -->
+<p class="has-text-align-center has-text-color" style="color:#7a9aa5;font-size:14px">Două etaje mai sus, infinit la creativitate</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#4a6670"},"typography":{"fontSize":"13px"},"spacing":{"margin":{"top":"16px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#4a6670;font-size:13px;margin-top:16px">Februarie 2026</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->`;
+
+      // Create blob and download
+      const blob = new Blob([wpCode], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'therme-vdl-wordpress-blocks.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
 </body>
 </html>
