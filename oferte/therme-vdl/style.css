@@ -346,19 +346,19 @@ section {
 }
 
 .zone-icon {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-deep);
+  background: var(--color-mist);
   border-radius: 50%;
 }
 
 .zone-icon ion-icon {
   font-size: 1.75rem;
-  color: var(--color-white);
+  color: var(--color-deep);
 }
 
 .zone-card h3 {
