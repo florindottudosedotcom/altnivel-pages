@@ -1,6 +1,6 @@
 /* ============================================
    Therme x Vizita de Lucru - Proposal Page
-   Design: Spa-inspired elegance with thermal blues
+   Design: Alt Nivel Studio grayscale palette
    ============================================ */
 
 * {
@@ -10,23 +10,23 @@
 }
 
 :root {
-  /* Thermal Palette - inspired by mineral waters and spa serenity */
-  --color-deep: #0a2e3d;
-  --color-thermal: #1a5f7a;
-  --color-aqua: #2d8a9e;
-  --color-lagoon: #4eb8c7;
-  --color-mist: #a8d8e0;
-  --color-foam: #e8f4f6;
+  /* Alt Nivel Grayscale Palette */
+  --color-deep: #1a1a1a;
+  --color-thermal: #333333;
+  --color-aqua: #555555;
+  --color-lagoon: #888888;
+  --color-mist: #cccccc;
+  --color-foam: #f7f7f7;
   --color-white: #ffffff;
 
-  /* Accent - warm gold for premium feel */
-  --color-gold: #c9a962;
-  --color-gold-light: #e4d5a8;
+  /* Accent - grayscale for consistency */
+  --color-gold: #999999;
+  --color-gold-light: #cccccc;
 
   /* Neutrals */
-  --color-text: #1e3a44;
-  --color-text-light: #4a6670;
-  --color-text-muted: #7a9aa5;
+  --color-text: #1a1a1a;
+  --color-text-light: #666666;
+  --color-text-muted: #999999;
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -72,16 +72,16 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(165deg, var(--color-deep) 0%, var(--color-thermal) 50%, var(--color-aqua) 100%);
+  background: var(--color-deep);
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 80%, rgba(78, 184, 199, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(168, 216, 224, 0.2) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(201, 169, 98, 0.1) 0%, transparent 60%);
+    radial-gradient(circle at 20% 80%, rgba(100, 100, 100, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(150, 150, 150, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(200, 200, 200, 0.1) 0%, transparent 60%);
   animation: shimmer 15s ease-in-out infinite;
 }
 
@@ -110,7 +110,7 @@ body {
   text-transform: uppercase;
   color: var(--color-gold-light);
   padding: 10px 24px;
-  border: 1px solid rgba(201, 169, 98, 0.4);
+  border: 1px solid rgba(200, 200, 200, 0.4);
   border-radius: 100px;
 }
 
@@ -202,7 +202,7 @@ body {
    ============================================ */
 
 .anniversary-banner {
-  background: var(--color-gold);
+  background: #e5e5e5;
   color: var(--color-deep);
   padding: 24px 0;
 }
@@ -342,7 +342,7 @@ section {
 
 .zone-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(10, 46, 61, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
 .zone-icon {
@@ -352,7 +352,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-thermal), var(--color-aqua));
+  background: var(--color-deep);
   border-radius: 50%;
 }
 
@@ -412,13 +412,13 @@ section {
   background: var(--color-white);
   padding: 40px 32px;
   border-radius: 12px;
-  border: 1px solid rgba(10, 46, 61, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .topic-card:hover {
   border-color: var(--color-lagoon);
-  box-shadow: 0 8px 32px rgba(10, 46, 61, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .topic-number {
@@ -457,8 +457,8 @@ section {
    ============================================ */
 
 .benefits {
-  background: linear-gradient(165deg, var(--color-deep) 0%, var(--color-thermal) 100%);
-  color: var(--color-white);
+  background: var(--color-foam);
+  color: var(--color-deep);
 }
 
 .benefits-grid {
@@ -471,19 +471,20 @@ section {
   display: flex;
   gap: 20px;
   padding: 32px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-white);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   transition: background 0.3s ease;
 }
 
 .benefit-item:hover {
-  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .benefit-item ion-icon {
   font-size: 1.75rem;
-  color: var(--color-gold);
+  color: var(--color-deep);
   flex-shrink: 0;
   margin-top: 4px;
 }
@@ -493,11 +494,12 @@ section {
   font-size: 1.125rem;
   font-weight: 500;
   margin-bottom: 8px;
+  color: var(--color-deep);
 }
 
 .benefit-content p {
   font-size: 0.9375rem;
-  opacity: 0.85;
+  color: var(--color-text-light);
   line-height: 1.6;
 }
 
@@ -520,7 +522,7 @@ section {
 .package-card {
   position: relative;
   background: var(--color-white);
-  border: 1px solid rgba(10, 46, 61, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 16px;
   padding: 40px 32px;
   display: flex;
@@ -529,12 +531,12 @@ section {
 }
 
 .package-card:hover {
-  box-shadow: 0 12px 48px rgba(10, 46, 61, 0.12);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
 }
 
 .package-featured {
-  border: 2px solid var(--color-thermal);
-  box-shadow: 0 8px 40px rgba(26, 95, 122, 0.15);
+  border: 2px solid var(--color-deep);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
 }
 
 .package-badge {
@@ -574,8 +576,8 @@ section {
   text-align: center;
   padding: 24px 0;
   margin-bottom: 24px;
-  border-top: 1px solid rgba(10, 46, 61, 0.08);
-  border-bottom: 1px solid rgba(10, 46, 61, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .price-amount {
@@ -613,7 +615,7 @@ section {
   padding: 10px 0;
   font-size: 0.9375rem;
   color: var(--color-text-light);
-  border-bottom: 1px solid rgba(10, 46, 61, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .package-features li:last-child {
@@ -663,7 +665,7 @@ section {
   padding: 48px 32px;
   background: var(--color-white);
   border-radius: 12px;
-  border: 1px solid rgba(10, 46, 61, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .team-avatar {
@@ -673,7 +675,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-mist), var(--color-lagoon));
+  background: var(--color-mist);
   border-radius: 50%;
 }
 
@@ -700,7 +702,7 @@ section {
    ============================================ */
 
 .cta {
-  background: linear-gradient(135deg, var(--color-thermal) 0%, var(--color-aqua) 100%);
+  background: var(--color-deep);
   color: var(--color-white);
   text-align: center;
 }
@@ -737,7 +739,7 @@ section {
   gap: 10px;
   padding: 16px 40px;
   background: var(--color-white);
-  color: var(--color-thermal);
+  color: var(--color-deep);
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
