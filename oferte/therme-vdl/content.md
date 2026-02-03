@@ -18,6 +18,17 @@ highlights:
     title: "Stare de bine"
     text: "Made in Romania, pentru români"
 
+zones:
+  - icon: "planet-outline"
+    title: "Galaxy"
+    description: "1.7 km de tobogane, piscină cu valuri și activități interactive pentru întreaga familie"
+  - icon: "leaf-outline"
+    title: "The Palm"
+    description: "Oază exclusivă pentru adulți cu piscine minerale, hidro-masaj și baruri în apă"
+  - icon: "sparkles-outline"
+    title: "Elysium"
+    description: "Saune tematice, tratamente spa personalizate și fine dining pentru wellness complet"
+
 topics:
   - icon: "water-outline"
     title: "Filosofia Spa"

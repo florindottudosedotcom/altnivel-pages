@@ -194,9 +194,54 @@ h2 {
   text-align: center;
 }
 
+.zones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.zone-card {
+  background: var(--color-card);
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.zone-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cccccc;
+  border-radius: 50%;
+}
+
+.zone-icon ion-icon {
+  font-size: 24px;
+  color: var(--color-text);
+  border: none !important;
+}
+
+.zone-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.zone-card p {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
 .topics-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 48px;
 }
@@ -601,10 +646,7 @@ footer {
     gap: 12px;
   }
 
-  .topics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .zones-grid,
   .benefits-grid,
   .packages-grid,
   .team-grid {
@@ -642,10 +684,7 @@ footer {
     font-size: 1.75rem;
   }
 
-  .topics-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .zone-card,
   .topic-card,
   .benefit-card,
   .package-card,

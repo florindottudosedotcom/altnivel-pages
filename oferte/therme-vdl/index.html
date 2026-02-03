@@ -141,14 +141,14 @@
               <div class="container">
                 <h2>De ce Therme?</h2>
                 <p class="section-subtitle">Cel mai mare complex de wellness din Europa merită o poveste pe măsură</p>
-                <div class="topics-grid">
-                  ${(meta.highlights || []).slice(0, 4).map(item => `
-                    <div class="topic-card">
-                      <div class="topic-icon">
-                        <ion-icon name="${item.icon}"></ion-icon>
+                <div class="zones-grid">
+                  ${(meta.zones || []).map(zone => `
+                    <div class="zone-card">
+                      <div class="zone-icon">
+                        <ion-icon name="${zone.icon}"></ion-icon>
                       </div>
-                      <h3>${item.title}</h3>
-                      <p>${item.text}</p>
+                      <h3>${zone.title}</h3>
+                      <p>${zone.description}</p>
                     </div>
                   `).join('')}
                 </div>
