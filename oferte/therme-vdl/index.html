@@ -312,32 +312,36 @@
 <style>
   .benefit-card, .topic-card, .zone-card {
     background: #ffffff;
-    border-radius: 12px;
-    padding: 32px;
+    border-radius: 16px;
+    padding: 40px 24px;
     text-align: center;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     border: 1px solid #e5e5e5;
   }
-  .benefit-card ion-icon, .topic-card ion-icon, .zone-card ion-icon {
-    font-size: 24px;
-    color: #1a1a1a;
+  .icon-circle {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 72px;
-    height: 72px;
     background: #cccccc;
     border-radius: 50%;
-    margin: 0 auto 20px;
+  }
+  .icon-circle ion-icon {
+    font-size: 24px;
+    color: #1a1a1a;
   }
   .benefit-card h3, .topic-card h3, .zone-card h3 {
+    font-family: Georgia, serif;
     color: #1a1a1a;
-    font-size: 18px;
+    font-size: 1.25rem;
+    font-weight: 400;
     margin-bottom: 12px;
   }
   .benefit-card p, .topic-card p, .zone-card p {
     color: #666666;
-    font-size: 14px;
+    font-size: 0.9375rem;
     line-height: 1.6;
   }
 </style>
@@ -398,7 +402,7 @@
 <div class="wp-block-columns">${(meta.zones || []).map(z => `<!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
 <div class="zone-card">
-  <ion-icon name="${z.icon}"></ion-icon>
+  <div class="icon-circle"><ion-icon name="${z.icon}"></ion-icon></div>
   <h3>${z.title}</h3>
   <p>${z.description}</p>
 </div>
@@ -415,6 +419,70 @@
 
 <!-- wp:group {"align":"full","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
 <div class="wp-block-group alignfull has-background" style="background-color:#ffffff;padding-top:80px;padding-bottom:80px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#1a1a1a"}}} -->
+<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#1a1a1a">Subiecte propuse</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#666666"},"spacing":{"margin":{"bottom":"48px"}}}} -->
+<p class="has-text-align-center has-text-color" style="color:#666666;margin-bottom:48px">O paletă bogată de conversații pentru o zi memorabilă de podcast</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"}}}} -->
+<div class="wp-block-columns">\${(meta.topics || []).slice(0, 2).map((t, i) => \`<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#f7f7f7"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#f7f7f7;padding:32px">
+<!-- wp:paragraph {"style":{"color":{"text":"#e5e5e5"},"typography":{"fontSize":"2rem"}}} -->
+<p style="color:#e5e5e5;font-size:2rem;text-align:right">0\${i + 1}</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3,"style":{"color":{"text":"#1a1a1a"}}} -->
+<h3 style="color:#1a1a1a">\${t.title}</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"color":{"text":"#666666"}}} -->
+<p style="color:#666666">\${t.description}</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->\`).join('\\n')}</div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"},"margin":{"top":"24px"}}}} -->
+<div class="wp-block-columns" style="margin-top:24px">\${(meta.topics || []).slice(2, 4).map((t, i) => \`<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#f7f7f7"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#f7f7f7;padding:32px">
+<!-- wp:paragraph {"style":{"color":{"text":"#e5e5e5"},"typography":{"fontSize":"2rem"}}} -->
+<p style="color:#e5e5e5;font-size:2rem;text-align:right">0\${i + 3}</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3,"style":{"color":{"text":"#1a1a1a"}}} -->
+<h3 style="color:#1a1a1a">\${t.title}</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"color":{"text":"#666666"}}} -->
+<p style="color:#666666">\${t.description}</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->\`).join('\\n')}</div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"24px"},"margin":{"top":"24px"}}}} -->
+<div class="wp-block-columns" style="margin-top:24px">\${(meta.topics || []).slice(4, 6).map((t, i) => \`<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#f7f7f7"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"32px","right":"32px"}},"border":{"radius":"12px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="border-radius:12px;background-color:#f7f7f7;padding:32px">
+<!-- wp:paragraph {"style":{"color":{"text":"#e5e5e5"},"typography":{"fontSize":"2rem"}}} -->
+<p style="color:#e5e5e5;font-size:2rem;text-align:right">0\${i + 5}</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3,"style":{"color":{"text":"#1a1a1a"}}} -->
+<h3 style="color:#1a1a1a">\${t.title}</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"color":{"text":"#666666"}}} -->
+<p style="color:#666666">\${t.description}</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->\`).join('\\n')}</div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"color":{"background":"#f7f7f7"},"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group alignfull has-background" style="background-color:#f7f7f7;padding-top:80px;padding-bottom:80px"><!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#1a1a1a"}}} -->
 <h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#1a1a1a">Ce câștigă Therme</h2>
 <!-- /wp:heading -->
 
@@ -426,7 +494,7 @@
 <div class="wp-block-columns">${(meta.benefits || []).slice(0, 3).map(b => `<!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
 <div class="benefit-card">
-  <ion-icon name="${b.icon}"></ion-icon>
+  <div class="icon-circle"><ion-icon name="${b.icon}"></ion-icon></div>
   <h3>${b.title}</h3>
   <p>${b.description}</p>
 </div>
@@ -438,7 +506,7 @@
 <div class="wp-block-columns" style="margin-top:24px">${(meta.benefits || []).slice(3, 6).map(b => `<!-- wp:column -->
 <div class="wp-block-column"><!-- wp:html -->
 <div class="benefit-card">
-  <ion-icon name="${b.icon}"></ion-icon>
+  <div class="icon-circle"><ion-icon name="${b.icon}"></ion-icon></div>
   <h3>${b.title}</h3>
   <p>${b.description}</p>
 </div>
