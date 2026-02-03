@@ -1,0 +1,916 @@
+/* ============================================
+   Therme x Vizita de Lucru - Proposal Page
+   Design: Spa-inspired elegance with thermal blues
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Thermal Palette - inspired by mineral waters and spa serenity */
+  --color-deep: #0a2e3d;
+  --color-thermal: #1a5f7a;
+  --color-aqua: #2d8a9e;
+  --color-lagoon: #4eb8c7;
+  --color-mist: #a8d8e0;
+  --color-foam: #e8f4f6;
+  --color-white: #ffffff;
+
+  /* Accent - warm gold for premium feel */
+  --color-gold: #c9a962;
+  --color-gold-light: #e4d5a8;
+
+  /* Neutrals */
+  --color-text: #1e3a44;
+  --color-text-light: #4a6670;
+  --color-text-muted: #7a9aa5;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+
+  /* Spacing */
+  --section-padding: 100px;
+  --container-max: 1100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrapper {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(165deg, var(--color-deep) 0%, var(--color-thermal) 50%, var(--color-aqua) 100%);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(78, 184, 199, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168, 216, 224, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(201, 169, 98, 0.1) 0%, transparent 60%);
+  animation: shimmer 15s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+  padding: 60px 32px;
+}
+
+.brand-badge {
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  padding: 10px 24px;
+  border: 1px solid rgba(201, 169, 98, 0.4);
+  border-radius: 100px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.hero-series {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold-light);
+  margin-bottom: 32px;
+}
+
+.hero-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 0 auto 32px;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  font-weight: 300;
+  max-width: 480px;
+  margin: 0 auto 48px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hero-client {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.client-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.client-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.hero-badge {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: var(--color-white);
+}
+
+.anniversary-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-gold);
+}
+
+.anniversary-text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* ============================================
+   Anniversary Banner
+   ============================================ */
+
+.anniversary-banner {
+  background: var(--color-gold);
+  color: var(--color-deep);
+  padding: 24px 0;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.banner-content ion-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ============================================
+   Section Styling
+   ============================================ */
+
+section {
+  padding: var(--section-padding) 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-deep);
+  margin-bottom: 16px;
+}
+
+.section-header-light h2 {
+  color: var(--color-white);
+}
+
+.section-subtitle {
+  font-size: 1.0625rem;
+  color: var(--color-text-light);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.section-header-light .section-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   Intro Section
+   ============================================ */
+
+.intro {
+  background: var(--color-foam);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.intro-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: sticky;
+  top: 40px;
+}
+
+.intro-label span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.label-highlight {
+  font-family: var(--font-display);
+  font-size: 2rem !important;
+  font-weight: 500;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--color-thermal) !important;
+}
+
+.intro-content {
+  max-width: 700px;
+}
+
+.intro-lead {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  color: var(--color-text);
+}
+
+.intro-content p {
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+}
+
+/* ============================================
+   Why Therme Section
+   ============================================ */
+
+.why-therme {
+  background: var(--color-white);
+}
+
+.therme-zones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.zone-card {
+  text-align: center;
+  padding: 40px 32px;
+  background: var(--color-foam);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zone-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(10, 46, 61, 0.1);
+}
+
+.zone-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-thermal), var(--color-aqua));
+  border-radius: 50%;
+}
+
+.zone-icon ion-icon {
+  font-size: 1.75rem;
+  color: var(--color-white);
+}
+
+.zone-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-deep);
+  margin-bottom: 12px;
+}
+
+.zone-card p {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.why-statement {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.why-statement blockquote {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--color-thermal);
+  padding: 40px;
+  border-left: 3px solid var(--color-gold);
+  background: linear-gradient(90deg, var(--color-foam) 0%, transparent 100%);
+  text-align: left;
+}
+
+/* ============================================
+   Topics Section
+   ============================================ */
+
+.topics {
+  background: var(--color-foam);
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.topic-card {
+  position: relative;
+  background: var(--color-white);
+  padding: 40px 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(10, 46, 61, 0.08);
+  transition: all 0.3s ease;
+}
+
+.topic-card:hover {
+  border-color: var(--color-lagoon);
+  box-shadow: 0 8px 32px rgba(10, 46, 61, 0.08);
+}
+
+.topic-number {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-mist);
+  line-height: 1;
+}
+
+.topic-card ion-icon {
+  font-size: 2rem;
+  color: var(--color-aqua);
+  margin-bottom: 20px;
+}
+
+.topic-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-deep);
+  margin-bottom: 12px;
+}
+
+.topic-card p {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* ============================================
+   Benefits Section
+   ============================================ */
+
+.benefits {
+  background: linear-gradient(165deg, var(--color-deep) 0%, var(--color-thermal) 100%);
+  color: var(--color-white);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 20px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+.benefit-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.benefit-item ion-icon {
+  font-size: 1.75rem;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.benefit-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.benefit-content p {
+  font-size: 0.9375rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ============================================
+   Packages Section
+   ============================================ */
+
+.packages {
+  background: var(--color-white);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+.package-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid rgba(10, 46, 61, 0.12);
+  border-radius: 16px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.package-card:hover {
+  box-shadow: 0 12px 48px rgba(10, 46, 61, 0.12);
+}
+
+.package-featured {
+  border: 2px solid var(--color-thermal);
+  box-shadow: 0 8px 40px rgba(26, 95, 122, 0.15);
+}
+
+.package-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-thermal);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 100px;
+}
+
+.package-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.package-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-deep);
+  margin-bottom: 8px;
+}
+
+.package-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.package-price {
+  text-align: center;
+  padding: 24px 0;
+  margin-bottom: 24px;
+  border-top: 1px solid rgba(10, 46, 61, 0.08);
+  border-bottom: 1px solid rgba(10, 46, 61, 0.08);
+}
+
+.price-amount {
+  font-family: var(--font-body);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-deep);
+  letter-spacing: -0.02em;
+}
+
+.price-currency {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-deep);
+  vertical-align: super;
+  margin-left: 4px;
+}
+
+.price-note {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.package-features {
+  list-style: none;
+  flex-grow: 1;
+}
+
+.package-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  border-bottom: 1px solid rgba(10, 46, 61, 0.05);
+}
+
+.package-features li:last-child {
+  border-bottom: none;
+}
+
+.package-features ion-icon {
+  font-size: 1.125rem;
+  color: var(--color-aqua);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.payment-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 24px;
+  background: var(--color-foam);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+}
+
+.payment-info ion-icon {
+  font-size: 1.25rem;
+  color: var(--color-aqua);
+}
+
+/* ============================================
+   Team Section
+   ============================================ */
+
+.team {
+  background: var(--color-foam);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.team-card {
+  text-align: center;
+  padding: 48px 32px;
+  background: var(--color-white);
+  border-radius: 12px;
+  border: 1px solid rgba(10, 46, 61, 0.08);
+}
+
+.team-avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-mist), var(--color-lagoon));
+  border-radius: 50%;
+}
+
+.team-avatar ion-icon {
+  font-size: 1.75rem;
+  color: var(--color-deep);
+}
+
+.team-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-deep);
+  margin-bottom: 4px;
+}
+
+.team-card p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   CTA Section
+   ============================================ */
+
+.cta {
+  background: linear-gradient(135deg, var(--color-thermal) 0%, var(--color-aqua) 100%);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 400;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.cta p {
+  font-size: 1.0625rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+.cta-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: var(--color-white);
+  color: var(--color-thermal);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button ion-icon {
+  font-size: 1.25rem;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.cta-link:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  background: var(--color-deep);
+  color: var(--color-white);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+.footer-date {
+  font-size: 0.8125rem;
+  opacity: 0.5;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 900px) {
+  :root {
+    --section-padding: 72px;
+  }
+
+  .hero-badge {
+    position: static;
+    transform: none;
+    margin-top: 48px;
+  }
+
+  .hero-content {
+    padding: 40px 24px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .intro-label {
+    position: static;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .therme-zones,
+  .topics-grid,
+  .packages-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .package-featured {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-padding: 56px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .anniversary-number {
+    font-size: 4rem;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .topic-card,
+  .zone-card,
+  .package-card,
+  .team-card {
+    padding: 32px 24px;
+  }
+
+  .benefit-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .benefit-item ion-icon {
+    margin: 0 auto;
+  }
+
+  .price-amount {
+    font-size: 2.5rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  .package-card {
+    break-inside: avoid;
+  }
+}
